@@ -2375,17 +2375,17 @@
 					"label": "ServerIP",
 					"name": "ServerIP"
 				},
-        {
+        			{
 					"default": "password",
 					"label": "WEBPASSWORD",
 					"name": "WEBPASSWORD"
 				},
-        {
+       				 {
 					"default": "127.0.0.1#5335",
 					"label": "DNS1",
 					"name": "DNS1"
 				},
-        {
+        			{
 					"default": "127.0.0.1#5335",
 					"label": "DNS2",
 					"name": "DNS2"
