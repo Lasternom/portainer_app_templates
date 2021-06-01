@@ -1130,7 +1130,7 @@
 			],
 			"description": "Gluetun Lightweight swiss-knife-like VPN client to tunnel to Cyberghost, FastestVPN, HideMyAss, IVPN, Mullvad, NordVPN, Privado, Private Internet Access, PrivateVPN, ProtonVPN, PureVPN, Surfshark, TorGuard, VyprVPN and Windscribe VPN servers using Go, OpenVPN, iptables, DNS over TLS, ShadowSocks and an HTTP proxy.",
 			"env": [
-        {
+        			{
 					"default": "mullvad",
 					"label": "VPNSP",
 					"name": "VPNSP"
@@ -1140,7 +1140,7 @@
 					"label": "OPENVPN_USER",
 					"name": "OPENVPN_USER"
 				},
-        {
+       				{
 					"default": "m",
 					"label": "OPENVPN_PASSWORD",
 					"name": "OPENVPN_PASSWORD"
@@ -1150,7 +1150,7 @@
 					"label": "OPENVPN_VERBOSITY",
 					"name": "OPENVPN_VERBOSITY"
 				},
-        {
+        			{
 					"default": "Switzerland",
 					"label": "COUNTRY",
 					"name": "COUNTRY"
