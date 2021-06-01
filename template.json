@@ -1140,7 +1140,7 @@
 					"label": "OPENVPN_USER",
 					"name": "OPENVPN_USER"
 				},
-        {
+        			{
 					"default": "1001",
 					"label": "OPENVPN_PASSWORD",
 					"name": "OPENVPN_PASSWORD"
@@ -1150,7 +1150,7 @@
 					"label": "OPENVPN_VERBOSITY",
 					"name": "OPENVPN_VERBOSITY"
 				},
-        {
+        			{
 					"default": "Switzerland",
 					"label": "COUNTRY",
 					"name": "COUNTRY"
