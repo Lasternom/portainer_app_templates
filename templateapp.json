@@ -1,0 +1,469 @@
+{
+	"version": "2",
+	"templates": [
+		{
+			"categories": [
+				"Music"
+			],
+			"description": "Airsonic is a free, web-based media streamer, providing ubiqutious access to your music. Use it to share your music with friends, or to listen to your own music while at work. You can stream to multiple players simultaneously, for instance to one player in your kitchen and another in your living room.",
+			"env": [
+				{
+					"default": "1001",
+					"label": "PUID",
+					"name": "PUID"
+				},
+				{
+					"default": "1001",
+					"label": "PGID",
+					"name": "PGID"
+				},
+				{
+					"label": "CONTEXT_PATH",
+					"name": "CONTEXT_PATH",
+					"set": "airsonic"
+				},
+				{
+					"label": "JAVA_OPTS",
+					"name": "JAVA_OPTS",
+					"set": "-Xms256m -Xmx512m"
+				}
+			],
+			"image": "linuxserver/airsonic:latest",
+			"logo": "https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/airsonic-logo.png",
+			"name": "airsonic",
+			"platform": "linux",
+			"ports": [
+				"4040:4040/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Airsonic",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/srv/dev-disk-by-uuid-400651db-021d-47aa-bf66-be3666c097bc/Music",
+					"container": "/music"
+				},
+				{
+					"bind": "/srv/dev-disk-by-uuid-6b4bba4d-b620-4a6f-828a-92e102ee008d/MyConfig/Airsonic/Playlists",
+					"container": "/playlists"
+				},
+				{
+					"bind": "/srv/dev-disk-by-uuid-400651db-021d-47aa-bf66-be3666c097bc/Podcasts",
+					"container": "/podcasts"
+				},
+				{
+					"bind": "/srv/dev-disk-by-uuid-6b4bba4d-b620-4a6f-828a-92e102ee008d/MyConfig/Airsonic/Media",
+					"container": "/media"
+				},
+				{
+					"bind": "/srv/dev-disk-by-uuid-6b4bba4d-b620-4a6f-828a-92e102ee008d/MyConfig/Airsonic/",
+					"container": "/config"
+				}
+			]
+		},
+		{
+			"categories": [
+				"Video",
+				"Music"
+			],
+			"description": "Bazarr is a companion application to Sonarr and Radarr. It can manage and download subtitles based on your requirements. You define your preferences by TV show or movie and Bazarr takes care of everything for you.",
+			"env": [
+				{
+					"default": "1001",
+					"label": "PUID",
+					"name": "PUID"
+				},
+				{
+					"default": "1001",
+					"label": "PGID",
+					"name": "PGID"
+				},
+				{
+					"label": "TZ",
+					"name": "TZ"
+				}
+			],
+			"image": "linuxserver/bazarr:latest",
+			"logo": "https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/bazarr.png",
+			"name": "Bazarr",
+			"platform": "linux",
+			"ports": [
+				"6767:6767/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Bazarr",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/srv/dev-disk-by-uuid-6b4bba4d-b620-4a6f-828a-92e102ee008d/MyConfig/Bazarr",
+					"container": "/config"
+				},
+				{
+					"bind": "/srv/dev-disk-by-uuid-bee1cc0e-340e-4b06-be67-2ab2ab432009",
+					"container": "/tv"
+				},
+				{
+					"bind": "/srv/dev-disk-by-uuid-4e26d616-7d73-4772-b5a3-db71e2befd55",
+					"container": "/movies"
+				}
+			]
+		},
+		{
+			"categories": [
+				"Music"
+			],
+			"description": "The purpose of beets is to get your music collection right once and for all. It catalogs your collection, automatically improving its metadata as it goes using the MusicBrainz database. Then it provides a bouquet of tools for manipulating and accessing your music.",
+			"env": [
+				{
+					"default": "1001",
+					"label": "PUID",
+					"name": "PUID"
+				},
+				{
+					"default": "1001",
+					"label": "PGID",
+					"name": "PGID"
+				}
+			],
+			"image": "linuxserver/beets:latest",
+			"logo": "https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/beets-icon.png",
+			"name": "beets",
+			"platform": "linux",
+			"ports": [
+				"8337:8337/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Beets",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/srv/dev-disk-by-uuid-6b4bba4d-b620-4a6f-828a-92e102ee008d/MyConfig/Beets",
+					"container": "/config"
+				},
+				{
+					"bind": "/srv/dev-disk-by-uuid-6b4bba4d-b620-4a6f-828a-92e102ee008d/MyTorrents",
+					"container": "/downloads"
+				},
+				{
+					"bind": "/srv/dev-disk-by-uuid-400651db-021d-47aa-bf66-be3666c097bc/Music",
+					"container": "/music"
+				}
+			]
+		},
+		{
+			"categories": [
+				"Downloaders",
+				"Tools"
+			],
+			"description": "Jackett works as a proxy server it translates queries from apps like Sonarr etc into tracker-site-specific http queries and parses the html response sending results back to the requesting software.[",
+			"env": [
+				{
+					"default": "1001",
+					"label": "PUID",
+					"name": "PUID"
+				},
+				{
+					"default": "1001",
+					"label": "PGID",
+					"name": "PGID"
+				}
+			],
+			"image": "linuxserver/jackett:latest",
+			"logo": "https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/jacket-icon.png",
+			"name": "jackett",
+			"platform": "linux",
+			"ports": [
+				"9117:9117/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Jackett",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/srv/dev-disk-by-uuid-6b4bba4d-b620-4a6f-828a-92e102ee008d/MyConfig/Jackett",
+					"container": "/config"
+				},
+				{
+					"bind": "/srv/dev-disk-by-uuid-6b4bba4d-b620-4a6f-828a-92e102ee008d/MyTorrents",
+					"container": "/downloads"
+				}
+			]
+		},
+		{
+			"categories": [
+				"Other",
+				"Tools"
+			],
+			"description": "Organizr allows you to setup Tabs that will be loaded all in one webpage. You can then work on your server with ease.",
+			"env": [
+				{
+					"default": "1001",
+					"label": "PUID",
+					"name": "PUID"
+				},
+				{
+					"default": "1001",
+					"label": "PGID",
+					"name": "PGID"
+				}
+			],
+			"image": "organizr/organizr:latest",
+			"logo": "https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/organizr-icon.png",
+			"name": "organizr-v2",
+			"platform": "linux",
+			"ports": [
+				"80/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Organizr v2",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/srv/dev-disk-by-uuid-6b4bba4d-b620-4a6f-828a-92e102ee008d/MyConfig/Organizr",
+					"container": "/config"
+				}
+			]
+		},
+		{
+			"categories": [
+				"Other",
+				"Tools"
+			],
+			"description": "A A Linux network-level advertisement and Internet tracker blocking application which acts as a DNS sinkhole.",
+			"env": [
+				{
+					"default": "Europe/Amsterdam",
+					"label": "TZ",
+					"name": "TZ"
+				},
+				{
+					"default": "192.168.178.142",
+					"label": "ServerIP",
+					"name": "ServerIP"
+				},
+				{
+					"default": "password",
+					"label": "WEBPASSWORD",
+					"name": "WEBPASSWORD"
+				},
+				{
+					"default": "127.0.0.1#5335",
+					"label": "DNS1",
+					"name": "DNS1"
+				},
+				{
+					"default": "127.0.0.1#5335",
+					"label": "DNS2",
+					"name": "DNS2"
+				}
+			],
+			"image": "lasternom/pihole:latest",
+			"logo": "https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/pihole.png",
+			"name": "pihole unbound",
+			"note": "When the installation is complete, navigate to your.ip.goes.here:1010/admin. Follow the article \u003ca href='https://medium.com/@niktrix/getting-rid-of-systemd-resolved-consuming-port-53-605f0234f32f'\u003ehere\u003c/a\u003e if you run into issues binding to port 53.",
+			"platform": "linux",
+			"ports": [
+				"22:22/tcp",
+				"53:53/tcp",
+				"53:53/udp",
+				"67:67/udp",
+				"142:80/tcp",
+				"4443:443/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Pi-Hole",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/srv/dev-disk-by-uuid-6b4bba4d-b620-4a6f-828a-92e102ee008d/MyConfig/PiHole",
+					"container": "/etc/pihole"
+				},
+				{
+					"bind": "/srv/dev-disk-by-uuid-6b4bba4d-b620-4a6f-828a-92e102ee008d/MyConfig/PiHole/DNS",
+					"container": "/etc/dnsmasq.d"
+				}
+			]
+		},
+		{
+			"categories": [
+				"Downloaders",
+				"Video"
+			],
+			"description": "Radarr - A fork of Sonarr to work with movies à la Couchpotato.",
+			"env": [
+				{
+					"default": "1001",
+					"label": "PUID",
+					"name": "PUID"
+				},
+				{
+					"default": "1001",
+					"label": "PGID",
+					"name": "PGID"
+				}
+			],
+			"image": "linuxserver/radarr:latest",
+			"logo": "https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/radarr.png",
+			"name": "radarr",
+			"platform": "linux",
+			"ports": [
+				"7878:7878/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Radarr",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/srv/dev-disk-by-uuid-6b4bba4d-b620-4a6f-828a-92e102ee008d/MyConfig/Radarr",
+					"container": "/config"
+				},
+				{
+					"bind": "/srv/dev-disk-by-uuid-6b4bba4d-b620-4a6f-828a-92e102ee008d/MyTorrents",
+					"container": "/downloads"
+				},
+				{
+					"bind": "/srv/dev-disk-by-uuid-4e26d616-7d73-4772-b5a3-db71e2befd55",
+					"container": "/movies"
+				}
+			]
+		},
+		{
+			"categories": [
+				"Downloaders",
+				"Video"
+			],
+			"description": "Sonarr (formerly NZBdrone) is a PVR for usenet and bittorrent users. It can monitor multiple RSS feeds for new episodes of your favorite shows and will grab, sort and rename them. It can also be configured to automatically upgrade the quality of files already downloaded when a better quality format becomes available.",
+			"env": [
+				{
+					"default": "1001",
+					"label": "PUID",
+					"name": "PUID"
+				},
+				{
+					"default": "1001",
+					"label": "PGID",
+					"name": "PGID"
+				}
+			],
+			"image": "linuxserver/sonarr:latest",
+			"logo": "https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/sonarr-icon.png",
+			"name": "sonarr",
+			"platform": "linux",
+			"ports": [
+				"8989:8989/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Sonarr",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/srv/dev-disk-by-uuid-6b4bba4d-b620-4a6f-828a-92e102ee008d/MyConfig/Sonarr",
+					"container": "/config"
+				},
+				{
+					"bind": "/dev/rtc",
+					"container": "/dev/rtc"
+				},
+				{
+					"bind": "/srv/dev-disk-by-uuid-bee1cc0e-340e-4b06-be67-2ab2ab432009",
+					"container": "/tv"
+				},
+				{
+					"bind": "/srv/dev-disk-by-uuid-6b4bba4d-b620-4a6f-828a-92e102ee008d/MyTorrents",
+					"container": "/downloads"
+				}
+			]
+		},
+		{
+			"categories": [
+				"Other",
+				"Downloaders"
+			],
+			"description": "YoutubeDL-Material is a Material Design frontend for youtube-dl. It's coded using Angular 9 for the frontend, and Node.js on the backend.",
+			"env": [
+				{
+					"default": "1001",
+					"label": "UID",
+					"name": "UID"
+				},
+				{
+					"default": "1001",
+					"label": "PGID",
+					"name": "PGID"
+				}
+			],
+			"image": "tzahi12345/youtubedl-material:latest",
+			"logo": "https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/ytdlm.png",
+			"name": "youtubedl-material",
+			"platform": "linux",
+			"ports": [
+				"17442:17442/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "YouTubeDL-Material",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/srv/dev-disk-by-uuid-6b4bba4d-b620-4a6f-828a-92e102ee008d/MyConfig/YTDLM",
+					"container": "/app/appdata"
+				},
+				{
+					"bind": "/srv/dev-disk-by-uuid-400651db-021d-47aa-bf66-be3666c097bc/Youtube/Video",
+					"container": "/app/video"
+				},
+				{
+					"bind": "/srv/dev-disk-by-uuid-400651db-021d-47aa-bf66-be3666c097bc/Youtube/Subscriptions",
+					"container": "/app/subscriptions"
+				},
+				{
+					"bind": "/srv/dev-disk-by-uuid-400651db-021d-47aa-bf66-be3666c097bc/Youtube/Users",
+					"container": "/app/users"
+				},
+				{
+					"bind": "/srv/dev-disk-by-uuid-400651db-021d-47aa-bf66-be3666c097bc/Youtube/Audio",
+					"container": "/app/audio"
+				}
+			]
+		},
+		{
+			"categories": [
+				"Downloaders"
+			],
+			"description": "The qBittorrent project aims to provide an open-source software alternative to µTorrent. qBittorrent is based on the Qt toolkit and libtorrent-rasterbar library.",
+			"env": [
+				{
+					"default": "1001",
+					"label": "PUID",
+					"name": "PUID"
+				},
+				{
+					"default": "1001",
+					"label": "PGID",
+					"name": "PGID"
+				}
+			],
+			"image": "linuxserver/qbittorrent:latest",
+			"logo": "https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/qbittorrent-icon.png",
+			"name": "qbittorrent",
+			"platform": "linux",
+			"ports": [
+				"6881:6881/tcp",
+				"6881:6881/udp",
+				"8080:8080/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "qBittorrent",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/srv/dev-disk-by-uuid-6b4bba4d-b620-4a6f-828a-92e102ee008d/MyConfig/qBittorrent",
+					"container": "/config"
+				},
+				{
+					"bind": "/srv/dev-disk-by-uuid-6b4bba4d-b620-4a6f-828a-92e102ee008d/MyTorrents",
+					"container": "/downloads"
+				}
+			]
+		}
+	]
+}
