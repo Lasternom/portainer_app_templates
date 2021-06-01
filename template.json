@@ -2630,12 +2630,12 @@
 			"description": "Radarr - A fork of Sonarr to work with movies à la Couchpotato.",
 			"env": [
 				{
-					"default": "1000",
+					"default": "1001",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "100",
+					"default": "1001",
 					"label": "PGID",
 					"name": "PGID"
 				}
@@ -2652,15 +2652,15 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/srv/dev-disk-by-label-media/Files/AppData/Config/Radarr",
+					"bind": "/srv/dev-disk-by-uuid-6b4bba4d-b620-4a6f-828a-92e102ee008d/MyConfig/Radarr",
 					"container": "/config"
 				},
 				{
-					"bind": "/srv/dev-disk-by-label-media/Downloads",
+					"bind": "/srv/dev-disk-by-uuid-6b4bba4d-b620-4a6f-828a-92e102ee008d/MyTorrents",
 					"container": "/downloads"
 				},
 				{
-					"bind": "/srv/dev-disk-by-label-media/Movies",
+					"bind": "/srv/dev-disk-by-uuid-4e26d616-7d73-4772-b5a3-db71e2befd55",
 					"container": "/movies"
 				}
 			]
