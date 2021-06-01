@@ -1,0 +1,1 @@
+# portainer_app_templates
