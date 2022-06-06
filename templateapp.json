@@ -162,7 +162,7 @@
 			],
 			"image": "ghcr.io/haveagitgat/tdarr:latest",
 			"logo": "https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/beets-icon.png",
-			"name": "tdarr",
+			"name": "tdarrr",
 			"platform": "linux",
 			"ports": [
 				"8265:8265/tcp"
