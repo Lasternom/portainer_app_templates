@@ -30,13 +30,13 @@
 			],
 			"image": "linuxserver/airsonic:latest",
 			"logo": "https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/airsonic-logo.png",
-			"name": "airsonic",
+			"name": "airsonic2",
 			"platform": "linux",
 			"ports": [
 				"4040:4040/tcp"
 			],
 			"restart_policy": "unless-stopped",
-			"title": "Airsonic",
+			"title": "Airsonic2",
 			"type": 1,
 			"volumes": [
 				{
