@@ -1,5 +1,5 @@
 {
-	"version": "3.4",
+	"version": "2",
 	"templates": [
 		{
 			"categories": [
@@ -79,7 +79,6 @@
 					"name": "PGID"
 				},
 				{
-				"default": "Europe/Amsterdam",
 					"label": "TZ",
 					"name": "TZ"
 				}
