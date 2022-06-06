@@ -107,14 +107,14 @@
 			],
 			"image": "authelia/authelia:latest",
 			"logo": "https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/authelia.png",
-			"name": "auSSthelia",
+			"name": "tdarr",
 			"note": "Requires a configuration.yml file in order to work. Documentation is Available \u003ca href='https://docs.authelia.com/deployment/deployment-ha'\u003ehere\u003c/a\u003e.",
 			"platform": "linux",
 			"ports": [
 				"9091:9091/tcp"
 			],
 			"restart_policy": "unless-stopped",
-			"title": "AuthSSSelia",
+			"title": "tdarr",
 			"type": 1,
 			"volumes": [
 				{
