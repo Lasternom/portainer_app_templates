@@ -172,7 +172,6 @@
 			],
 			"restart_policy": "unless-stopped",
 			"title": "tdarr",
-			"type": 1,
 			"volumes": [
 				{
 					"bind": "/srv/dev-disk-by-uuid-6b4bba4d-b620-4a6f-828a-92e102ee008d/MyServer/Tdarr",
