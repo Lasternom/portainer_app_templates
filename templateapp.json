@@ -79,6 +79,7 @@
 					"name": "PGID"
 				},
 				{
+				"default": "Europe/Amsterdam",
 					"label": "TZ",
 					"name": "TZ"
 				}
@@ -112,7 +113,7 @@
 			"categories": [
 				"Music"
 			],
-			"description": "Tidarr.",
+			"description": "Bazarr is a companion application to Sonarrr and Radarrr. It can manage and download subtitles based on your requirements. You define your preferences by TV show or movie and Bazarr takes care of everything for you.",
 			"env": [
 				{
 					"default": "1001",
@@ -123,7 +124,7 @@
 					"default": "1001",
 					"label": "PGID",
 					"name": "PGID"
-				},				
+				},
 				{
 					"default": "002",
 					"label": "UMASK_SET",
@@ -153,7 +154,7 @@
 					"default": "MyInternalNode",
 					"label": "nodeID",
 					"name": "nodeID"
-				},								
+				},
 				{
 					"default": "Europe/Amsterdam",
 					"label": "TZ",
@@ -188,7 +189,7 @@
 				{
 					"bind": "/srv/dev-disk-by-uuid-4e26d616-7d73-4772-b5a3-db71e2befd55/",
 					"container": "/media"
-				},				
+				},
 				{
 					"bind": "/srv/dev-disk-by-uuid-4e26d616-7d73-4772-b5a3-db71e2befd55/Transcode",
 					"container": "/temp"
