@@ -192,7 +192,7 @@
 				},				
 				{
 					"bind": "/srv/dev-disk-by-uuid-4e26d616-7d73-4772-b5a3-db71e2befd55/Transcode",
-					"container": "/transcode_cache:/temp"
+					"container": "/temp"
 				}
 			]
 		},
